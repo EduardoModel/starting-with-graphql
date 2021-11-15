@@ -1,0 +1,41 @@
+"""
+  This file is responsible to define the Schema("Routes") of the application.
+
+  The user data format inside the API and how it will be delivered through the GraphQL.
+  ATTENTION: This isn't the format, on which the user data will be saved inside the database!
+  Exclamation Marks(!) define a field as obligatory.
+"""
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  age: Int
+}
+
+"""
+  The Query is responsible only to retrieve information.
+"""
+type Query {
+  """
+    This query will send an array of users.
+    The exclamation mark defines that the array should only contain User type elements.
+    And the outer most exclamation mark tells that the return must be an array of users and isn't allowed to be NULL.
+  """
+  users: [User!]!
+  """
+    This query will retrieve the information about a specific user
+    In this case, the NULL response is valid, 'cause if an ID was informed whereby there isn't a user for it, the null response is the more
+    appropriately.
+  """
+  user(id: ID!): User
+}
+
+"""
+  The Mutation is responsible to change, create or delete some entry.
+"""
+type Mutation {
+  """
+    This mutation is responsable to create a new user entry inside the database
+  """
+  createUser(name: String!, email: String!): User
+}

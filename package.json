@@ -1,0 +1,15 @@
+{
+  "name": "starting-with-graphql",
+  "version": "1.0.0",
+  "description": "A project to learn the basics about GraphQL",
+  "main": "index.js",
+  "author": "EduardoModel <edu_model@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.1"
+  }
+}
