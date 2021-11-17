@@ -39,3 +39,15 @@ type Mutation {
   """
   createUser(name: String!, email: String!): User
 }
+
+type Counter {
+  count: Int!
+  countString: String
+}
+
+"""
+  Define a Subscription to increment a counter on the server side, that was informed by the client side
+"""
+type Subscription {
+  counter: Counter!
+}
